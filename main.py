@@ -18,6 +18,11 @@ class Main():
         pygame.time.set_timer(self.update_event, 200)
         self.game_active = False
 
+        self.eat_sound = pygame.mixer.Sound(join('.', 'sounds', 'crunch.wav'))
+        self.background_music = pygame.mixer.Sound(join('.', 'sounds', 'Arcade.ogg'))
+        self.background_music.set_volume(0.6)
+        self.background_music.play(-1)
+
 
     def run(self):
         while True:
@@ -66,6 +71,7 @@ class Main():
         if self.snake.body[0] == self.apple.pos:
             self.snake.ate = True
             self.apple.set_position()
+            self.eat_sound.play()
 
 
         if self.snake.body[0] in self.snake.body[1:] or \
