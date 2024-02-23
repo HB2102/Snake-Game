@@ -20,7 +20,7 @@ class Apple:
         # rect = pygame.Rect(self.pos.x * CELL_SIZE, self.pos.y * CELL_SIZE, CELL_SIZE, CELL_SIZE)
         # # pygame.draw.rect(self.display_surface, 'blue', rect)
         # self.display_surface.blit(self.surface,rect)
-        scale = 1 + sin(pygame.time.get_ticks() / 500) / 3
+        scale = 1 + sin(pygame.time.get_ticks() / 300) / 3
         self.scaled_surface = pygame.transform.smoothscale_by(self.surface, scale)
         self.scaled_rect = self.scaled_surface.get_rect(center = (self.pos.x * CELL_SIZE + CELL_SIZE / 2, self.pos.y * CELL_SIZE + CELL_SIZE / 2))
 
